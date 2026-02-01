@@ -80,5 +80,30 @@ namespace FlyNotify.Common
         {
             return Process.GetCurrentProcess().MainModule.FileName;
         }
+
+        public static void SetStartup(bool runOnStartup)
+        {
+            try
+            {
+                using (var key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true))
+                {
+                    if (key != null)
+                    {
+                        if (runOnStartup)
+                        {
+                            key.SetValue("FlyNotify", $"\"{FindExe()}\"");
+                        }
+                        else
+                        {
+                            key.DeleteValue("FlyNotify", false);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // Ignore errors
+            }
+        }
     }
 }

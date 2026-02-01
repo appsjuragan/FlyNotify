@@ -48,7 +48,7 @@ namespace FlyNotify.Common
         // Deprecated Settings
         [Deprecated("Use CustomPositionPercentX Instead", DeprecationType.Deprecate, 241)] public int CustomPositionX = 0; // Deprecated In Favor Of Percentage Units
         [Deprecated("Use CustomPositionPercentY Instead", DeprecationType.Deprecate, 241)] public int CustomPositionY = 0; // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        [Deprecated("Startup Is Now Managed By MSIX", DeprecationType.Deprecate, 244)] public bool RunOnStartup = false; // Startup Is Now Managed By MSIX
+        public bool RunOnStartup = false;
 
 
         public static Settings Get()

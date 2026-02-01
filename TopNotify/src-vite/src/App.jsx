@@ -8,6 +8,7 @@ import MonitorSelect from "./MonitorSelect";
 import ManageNotificationSounds from "./NotificationSounds";
 import Preview from "./Preview";
 import ReadAloud from "./ReadAloud";
+import RunOnStart from "./RunOnStart";
 import SoundInterceptionToggle from "./SoundInterceptionToggle";
 
 import NotificationTransparency from "./Transparency";
@@ -16,6 +17,8 @@ window.Config = {
     Location: -1,
     Opacity: 0,
     ReadAloud: false,
+    RunOnStartup: false,
+    EnableClickThrough: false,
     AppReferences: []
 };
 
@@ -85,9 +88,11 @@ function App() {
             }
 
             <Container>
-                <ClickThrough></ClickThrough>
-                <Divider />
-                <NotificationTransparency></NotificationTransparency>
+                <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                    <ClickThrough></ClickThrough>
+                    <Divider />
+                    <NotificationTransparency></NotificationTransparency>
+                </div>
             </Container>
 
             <Container>
@@ -96,6 +101,8 @@ function App() {
                 <SoundInterceptionToggle></SoundInterceptionToggle>
                 <Divider />
                 <ManageNotificationSounds></ManageNotificationSounds>
+                <Divider />
+                <RunOnStart></RunOnStart>
             </Container>
 
             <div className='aboutButtons'>

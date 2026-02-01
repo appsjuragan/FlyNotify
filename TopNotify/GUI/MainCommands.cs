@@ -74,6 +74,16 @@ namespace FlyNotify.GUI
 
             Settings.Overwrite(data);
 
+            try
+            {
+                var settings = JsonConvert.DeserializeObject<Settings>(data);
+                if (settings != null)
+                {
+                    Util.SetStartup(settings.RunOnStartup);
+                }
+            }
+            catch { }
+
             Thread.Sleep(100); // Prevent Crashing Daemon From Spamming Button
 
             // Tell The Daemon The Config Has Changed

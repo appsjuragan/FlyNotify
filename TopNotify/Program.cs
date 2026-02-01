@@ -135,6 +135,14 @@ namespace FlyNotify.Common
                 Background = new Daemon.Daemon();
             }
 
+            // Sync startup registration
+            try
+            {
+                var settings = Settings.Get();
+                Util.SetStartup(settings.RunOnStartup);
+            }
+            catch { }
+
         }
 
         public static async Task App()

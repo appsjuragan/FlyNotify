@@ -49,7 +49,7 @@ Earlier versions of Windows 10 may work, but are not officially supported.
 
 # Download 📦
 
-Download the latest portable EXE release from the [releases](https://github.com/SamsidParty/TopNotify/releases) page. This version is portable and requires no installation.
+Download the latest portable EXE release from the [releases](https://github.com/appsjuragan/FlyNotify/releases) page. This version is portable and requires no installation.
 
 # Star History ⭐
 

@@ -19,7 +19,7 @@ namespace TopNotify.Common
 {
     public class Program
     {
-        // public static StoreContext Context;
+
         public static Daemon.Daemon Background;
         public static AppManager GUI;
         public static IEnumerable<Process> ValidTopNotifyInstances;
@@ -73,8 +73,8 @@ namespace TopNotify.Common
             //Settings Mode Shows A GUI That Can Be Used To Configure The App
             //These Mode Switches Ensure All Functions Of The App Use The Same Executable
 
-            //Find Other Instances Of TopNotify
-            ValidTopNotifyInstances = Process.GetProcessesByName("TopNotify").Where((p) => {
+            //Find Other Instances Of FlyNotify
+            ValidTopNotifyInstances = Process.GetProcessesByName("FlyNotify").Where((p) => {
                 try
                 {
                     return !p.HasExited && p.Id != Process.GetCurrentProcess().Id;
@@ -151,9 +151,7 @@ namespace TopNotify.Common
                 .WithoutTitleBar()
                 .Show();
 
-            // StoreContext Removed for Portable Version
-            // Context = StoreContext.GetDefault();
-            // WinRT.Interop.InitializeWithWindow.Initialize(Context, mainWindow.NativeHandle);
+
 
             // Clean Up
             GUI.OnCleanUp += () =>

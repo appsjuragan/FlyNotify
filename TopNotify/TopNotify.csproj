@@ -8,8 +8,8 @@
     <Nullable>enable</Nullable>
     <ApplicationIcon>src-vite\public\Image\Icon.ico</ApplicationIcon>
     <ApplicationManifest>iv2runtime\manifest.xml</ApplicationManifest>
-    <PackageId>TopNotify</PackageId>
-    <AssemblyName>TopNotify</AssemblyName>
+    <PackageId>FlyNotify</PackageId>
+    <AssemblyName>FlyNotify</AssemblyName>
     <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>C:\Users\Samarth\Documents\Certificates\SamsidParty Private.pfx</AssemblyOriginatorKeyFile>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
@@ -20,8 +20,9 @@
     <PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <PublishTrimmed>false</PublishTrimmed>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>partial</TrimMode>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
@@ -88,7 +89,7 @@
 		<PackageReference Include="IgniteView.FileDialogs" Version="2.2.2" />
 	</ItemGroup>
 	<ItemGroup>
-		<Content Include="iv2runtime\**">
+		<Content Include="iv2runtime\**" Exclude="**\*.pdb;**\*.exp;**\*.lib">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 			<PackageCopyToOutput>true</PackageCopyToOutput>

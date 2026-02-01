@@ -117,7 +117,7 @@ namespace TopNotify.Common
         public static string GetAppDataFolder()
         {
             var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var appFolder = Path.Combine(localAppData, "SamsidParty", "TopNotify");
+            var appFolder = Path.Combine(localAppData, "AppsJuragan", "FlyNotify");
 
             if (!Directory.Exists(appFolder))
             {

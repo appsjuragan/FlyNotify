@@ -3,13 +3,15 @@
 <br />
 <div align="center">
   <a href="https://github.com/SamsidParty/TopNotify">
-    <img src="./TopNotify/src-vite/public/Image/Icon.png" alt="TopNotify Logo" width="160" height="160">
+    <img src="./TopNotify/src-vite/public/Image/Icon.png" alt="FlyNotify Logo" width="160" height="160">
   </a>
 
-  <h3 align="center">TopNotify</h3>
+  <h3 align="center">FlyNotify</h3>
   <p align="center">
-    The ultimate notification customization tool for Windows
+    The ultimate portable notification customization tool for Windows
     <br />
+    <br />
+    <em>Forked from <a href="https://github.com/SamsidParty/TopNotify">TopNotify</a> by SamsidParty.</em>
     <br />
   </p>
   <div align="center">

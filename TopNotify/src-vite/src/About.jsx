@@ -18,7 +18,7 @@ export default function About() {
     return (
         <div className={"app loaded about"}>
             <div data-webview-drag className="draggableHeader">
-                <h2>About</h2>
+                <h2>About FlyNotify</h2>
             </div>
 
             <div className="windowCloseButton">
@@ -26,7 +26,7 @@ export default function About() {
             </div>
 
             <img src="/Image/IconSmall.png"></img>
-            <h4>TopNotify{version}</h4>
+            <h4>FlyNotify{version}</h4>
             <h6>Developed by SamsidParty • Powered by IgniteView</h6>
 
             <div className="aboutButtons">

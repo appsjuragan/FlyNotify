@@ -64,7 +64,7 @@ namespace TopNotify.Common
 
             AppDomain.CurrentDomain.UnhandledException += (object sender, UnhandledExceptionEventArgs e) =>
             {
-                NotificationTester.MessageBox("Something went wrong with TopNotify", "Unfortunately, TopNotify has crashed. Details: " + e.ExceptionObject.ToString());
+                NotificationTester.MessageBox("Something went wrong with FlyNotify", "Unfortunately, FlyNotify has crashed. Details: " + e.ExceptionObject.ToString());
             };
 
             //By Default, The App Will Be Launched In Daemon Mode
@@ -145,7 +145,7 @@ namespace TopNotify.Common
 
             var mainWindow =
                 WebWindow.Create()
-                .WithTitle("TopNotify")
+                .WithTitle("FlyNotify")
                 .WithBounds(new LockedWindowBounds((int)(400f * ResolutionFinder.GetScale()), (int)(650f * ResolutionFinder.GetScale())))
                 .With((w) => (w as Win32WebWindow).BackgroundMode = Win32WebWindow.WindowBackgroundMode.Acrylic)
                 .WithoutTitleBar()

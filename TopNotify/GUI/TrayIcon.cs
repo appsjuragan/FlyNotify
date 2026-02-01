@@ -61,11 +61,11 @@ namespace TopNotify.GUI
             //Use WinForms Methods To Create A Tray Icon
             notify.Visible = true;
             notify.Icon = Util.FindAppIcon();
-            notify.Text = "SamsidParty TopNotify";
+            notify.Text = "FlyNotify";
             notify.DoubleClick += new EventHandler(LaunchSettingsMode);
             notify.ContextMenuStrip = menuStrip;
             notify.ContextMenuStrip.Items.Add("Create Bug Report");
-            notify.ContextMenuStrip.Items.Add("Quit TopNotify");
+            notify.ContextMenuStrip.Items.Add("Quit FlyNotify");
             notify.ContextMenuStrip.ItemClicked += handler;
         }
 
@@ -97,7 +97,7 @@ namespace TopNotify.GUI
             {
                 BugReport.DisplayBugReport(BugReport.CreateBugReport());
             }
-            else if (itemText == "Quit TopNotify")
+            else if (itemText == "Quit FlyNotify")
             {
                 Quit();
             }   

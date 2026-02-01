@@ -30,9 +30,9 @@ export default function About() {
             <h6>Developed by SamsidParty • Powered by IgniteView</h6>
 
             <div className="aboutButtons">
-                <Button onClick={() => window.open("https://www.samsidparty.com/software/topnotify")}><TbWorld /> Official Website</Button>
-                <Button onClick={() => window.open("https://github.com/SamsidParty/TopNotify")}><TbBrandGithub /> GitHub</Button>
-                <Button onClick={() => window.open("https://github.com/SamsidParty/TopNotify/blob/main/LICENSE")}><TbLicense /> License</Button>
+                <Button onClick={() => window.open("https://github.com/appsjuragan/FlyNotify")}><TbWorld /> Official Website</Button>
+                <Button onClick={() => window.open("https://github.com/appsjuragan/FlyNotify")}><TbBrandGithub /> GitHub</Button>
+                <Button onClick={() => window.open("https://github.com/appsjuragan/FlyNotify/blob/main/LICENSE")}><TbLicense /> License</Button>
             </div>
         </div>
     );

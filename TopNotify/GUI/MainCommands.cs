@@ -34,7 +34,7 @@ namespace TopNotify.GUI
         public static void About()
         {
             WebWindow.Create("/index.html?about")
-                .WithTitle("About TopNotify")
+                .WithTitle("About FlyNotify")
                 .WithBounds(new LockedWindowBounds((int)(400f * ResolutionFinder.GetScale()), (int)(300f * ResolutionFinder.GetScale())))
                 .With((w) => (w as Win32WebWindow).BackgroundMode = Win32WebWindow.WindowBackgroundMode.Acrylic)
                 .WithoutTitleBar()

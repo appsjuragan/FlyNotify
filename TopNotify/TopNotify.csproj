@@ -10,6 +10,8 @@
     <ApplicationManifest>iv2runtime\manifest.xml</ApplicationManifest>
     <PackageId>FlyNotify</PackageId>
     <AssemblyName>FlyNotify</AssemblyName>
+    <Version>1.0.1</Version>
+    <FileVersion>1.0.1.0</FileVersion>
     <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>C:\Users\Samarth\Documents\Certificates\SamsidParty Private.pfx</AssemblyOriginatorKeyFile>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>

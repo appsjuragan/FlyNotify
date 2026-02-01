@@ -12,6 +12,31 @@ namespace TopNotify.Common
 {
     public class Util
     {
+        private static string _baseDir = null;
+        public static string BaseDir
+        {
+            get
+            {
+                if (_baseDir != null) return _baseDir;
+
+                // Priority 1: Check where the assembly is (important for single-file extraction)
+                var assemblyDir = Path.GetDirectoryName(typeof(Util).Assembly.Location);
+                if (!string.IsNullOrEmpty(assemblyDir) && Directory.Exists(Path.Combine(assemblyDir, "iv2runtime")))
+                {
+                    return _baseDir = assemblyDir;
+                }
+
+                // Priority 2: Use AppDomain BaseDirectory
+                var appDomainDir = AppDomain.CurrentDomain.BaseDirectory;
+                if (Directory.Exists(Path.Combine(appDomainDir, "iv2runtime")))
+                {
+                    return _baseDir = appDomainDir;
+                }
+
+                // Fallback
+                return _baseDir = appDomainDir;
+            }
+        }
 
         /// <summary>
         /// Runs A Command Prompt Command And Returns The Output
@@ -37,7 +62,7 @@ namespace TopNotify.Common
 
         public static Icon FindAppIcon()
         {
-            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "iv2runtime", "Icon.ico");
+            var path = Path.Combine(BaseDir, "iv2runtime", "Icon.ico");
             return new Icon(path);
         }
 
@@ -53,7 +78,7 @@ namespace TopNotify.Common
 
         public static string FindExe()
         {
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TopNotify.exe");
+            return Process.GetCurrentProcess().MainModule.FileName;
         }
     }
 }

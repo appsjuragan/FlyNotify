@@ -16,6 +16,15 @@
     <UseWindowsForms>False</UseWindowsForms>
     <Platforms>AnyCPU;x64;ARM64</Platforms>
     <Configurations>Debug;Release;GUI Debug</Configurations>
+    <!-- Self-contained single file configuration -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <PublishTrimmed>false</PublishTrimmed>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -56,11 +65,8 @@
 
   <ItemGroup>
     <Compile Remove="BUILD\**" />
-    <Compile Remove="MSIX\**" />
     <EmbeddedResource Remove="BUILD\**" />
-    <EmbeddedResource Remove="MSIX\**" />
     <None Remove="BUILD\**" />
-    <None Remove="MSIX\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -84,6 +90,7 @@
 	<ItemGroup>
 		<Content Include="iv2runtime\**">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 			<PackageCopyToOutput>true</PackageCopyToOutput>
 		</Content>
 	</ItemGroup>
@@ -100,8 +107,8 @@
 		<JSFramework>react</JSFramework>
 		<!-- This is required for IgniteView to know what js framework you are using -->
 		<ScriptsURL>https://raw.githubusercontent.com/SamsidParty/IgniteView/refs/heads/main/IgniteView.Scripts</ScriptsURL>
-		<PreBuildCommand>node -e "fetch('$(ScriptsURL)/Prebuild.js').then((c) =&gt; c.text().then(eval))" "$(ScriptsURL)" "$(MSBuildProjectDirectory.Replace('\', '\\'))" "$(Configuration)" "$(JSFramework)"</PreBuildCommand>
-		<PostBuildCommand>node -e "fetch('$(ScriptsURL)/Postbuild.js').then((c) =&gt; c.text().then(eval))" "$(ScriptsURL)" "$(MSBuildProjectDirectory.Replace('\', '\\'))" "$(Configuration)" "$(JSFramework)"</PostBuildCommand>
+		<PreBuildCommand>bun ..\scripts\Prebuild.js "$(ScriptsURL)" "$(MSBuildProjectDirectory.Replace('\', '\\'))" "$(Configuration)" "$(JSFramework)"</PreBuildCommand>
+		<PostBuildCommand>bun ..\scripts\Postbuild.js "$(ScriptsURL)" "$(MSBuildProjectDirectory.Replace('\', '\\'))" "$(Configuration)" "$(JSFramework)"</PostBuildCommand>
 	</PropertyGroup>
 	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
 		<Exec Command="$(PreBuildCommand) &quot;$(OutputPath.Replace('\', '\\'))&quot;" />

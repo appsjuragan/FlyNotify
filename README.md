@@ -18,7 +18,6 @@
   <a href="">![Stars Count](https://img.shields.io/github/stars/SamsidParty/TopNotify.svg?style=for-the-badge)</a>
   <a href="">![Code Size](https://img.shields.io/github/languages/code-size/SamsidParty/TopNotify?style=for-the-badge)</a>
   <a href="">![Repo Size](https://img.shields.io/github/repo-size/SamsidParty/TopNotify?style=for-the-badge)</a>
-  <a href="https://apps.microsoft.com/detail/9pfmdk0qhkqj?hl=en-US&gl=US">![Get It From Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)</a>
     
   </div>
 </div>
@@ -48,7 +47,7 @@ Earlier versions of Windows 10 may work, but are not officially supported.
 
 # Download 📦
 
-Download the latest MSIX/EXE release from the [releases](https://github.com/SamsidParty/TopNotify/releases) page
+Download the latest portable EXE release from the [releases](https://github.com/SamsidParty/TopNotify/releases) page. This version is portable and requires no installation.
 
 # Star History ⭐
 

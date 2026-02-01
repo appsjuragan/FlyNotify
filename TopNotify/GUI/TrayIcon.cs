@@ -130,7 +130,7 @@ namespace TopNotify.GUI
                 var exe = Util.FindExe();
                 var psi = new ProcessStartInfo(exe, "--settings" + (Debugger.IsAttached ? " --debug-process" : "")); // Use Debug Args If Needed
                 psi.UseShellExecute = false;
-                psi.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                psi.WorkingDirectory = Util.BaseDir;
                 var proc = Process.Start(psi);
             }
             catch (Exception ex)

@@ -396,3 +396,10 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 TopNotify/.DS_Store
+
+# Local Wrappers
+node.bat
+npm.bat
+npm.cmd
+npx.bat
+npx.cmd

@@ -1,0 +1,45 @@
+const fs = require('fs');
+const path = require('path');
+
+const isEval = !process.argv[1].endsWith('.js');
+const offset = isEval ? 1 : 2;
+
+const scriptsURL = process.argv[offset]; // $(ScriptsURL)
+const projectDirectory = process.argv[offset + 1]; // $(MSBuildProjectDirectory)
+const buildConfiguration = process.argv[offset + 2]; // $(Configuration)
+const jsFramework = process.argv[offset + 3]; // $(JSFramework)
+const outputDirectory = path.join(projectDirectory, process.argv[offset + 4]); // $(OutputPath)
+process.chdir(projectDirectory); // cd into the project directory
+
+// Copies a folder to the output directory if it exists
+function CopyIfExists(folderName, deleteOriginal) {
+    var folderPath = path.join(projectDirectory, folderName);
+    var targetPath = path.join(outputDirectory, folderName);
+
+    // Remove old one
+    if (fs.existsSync(targetPath)) {
+        console.log("Removing old output folder: " + folderName);
+        fs.rmSync(targetPath, { recursive: true });
+    }
+
+    // Copy new one
+    if (fs.existsSync(folderPath)) {
+        console.log("Copying new output folder: " + folderName);
+        fs.cpSync(folderPath, targetPath, { recursive: true });
+    }
+
+    if (!!deleteOriginal && fs.existsSync(folderPath)) {
+        fs.rmSync(folderPath, { recursive: true });
+    }
+}
+
+async function Main() {
+
+    console.log("\n-------- IgniteView Postbuild Version 2.1.0 --------\n");
+
+    CopyIfExists("dist", true);
+    CopyIfExists("wwwroot");
+    CopyIfExists("WWW");
+}
+
+Main();

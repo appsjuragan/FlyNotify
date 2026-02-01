@@ -11,7 +11,7 @@ using IgniteView.Core;
 using IgniteView.Desktop;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Windows.Services.Store;
+// using Windows.Services.Store;
 using Serilog;
 using Serilog.Core;
 
@@ -19,7 +19,7 @@ namespace TopNotify.Common
 {
     public class Program
     {
-        public static StoreContext Context;
+        // public static StoreContext Context;
         public static Daemon.Daemon Background;
         public static AppManager GUI;
         public static IEnumerable<Process> ValidTopNotifyInstances;
@@ -50,6 +50,18 @@ namespace TopNotify.Common
         [STAThread]
         public static void Main(string[] args)
         {
+            // Initialize bundle extraction paths for single-file deployment
+            var extractionDir = Path.GetDirectoryName(typeof(Program).Assembly.Location);
+            if (!string.IsNullOrEmpty(extractionDir))
+            {
+                var currentPath = Environment.GetEnvironmentVariable("PATH") ?? "";
+                var nativePath = Path.Combine(extractionDir, "iv2runtime", "win-x64", "native");
+                if (Directory.Exists(nativePath) && !currentPath.Contains(nativePath))
+                {
+                    Environment.SetEnvironmentVariable("PATH", nativePath + ";" + currentPath);
+                }
+            }
+
             AppDomain.CurrentDomain.UnhandledException += (object sender, UnhandledExceptionEventArgs e) =>
             {
                 NotificationTester.MessageBox("Something went wrong with TopNotify", "Unfortunately, TopNotify has crashed. Details: " + e.ExceptionObject.ToString());
@@ -139,8 +151,9 @@ namespace TopNotify.Common
                 .WithoutTitleBar()
                 .Show();
 
-            Context = StoreContext.GetDefault();
-            WinRT.Interop.InitializeWithWindow.Initialize(Context, mainWindow.NativeHandle);
+            // StoreContext Removed for Portable Version
+            // Context = StoreContext.GetDefault();
+            // WinRT.Interop.InitializeWithWindow.Initialize(Context, mainWindow.NativeHandle);
 
             // Clean Up
             GUI.OnCleanUp += () =>

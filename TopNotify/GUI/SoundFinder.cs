@@ -47,7 +47,7 @@ namespace TopNotify.GUI
         [Command("ImportSound")]
         public static string[] ImportSound()
         {
-            var soundPath = FileDialog.PickFile(new FileFilter("wav"));
+            var soundPath = IgniteView.FileDialogs.FileDialog.PickFile(new FileFilter("wav"));
 
             if (!string.IsNullOrEmpty(soundPath) && File.Exists(soundPath) && Path.GetExtension(soundPath).ToLower() == ".wav")
             {

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0-windows10.0.17763.0</TargetFramework>
-    <RootNamespace>SamsidParty_TopNotify</RootNamespace>
+    <RootNamespace>FlyNotify</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ApplicationIcon>src-vite\public\Image\Icon.ico</ApplicationIcon>
@@ -15,7 +15,7 @@
     <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>C:\Users\Samarth\Documents\Certificates\SamsidParty Private.pfx</AssemblyOriginatorKeyFile>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <UseWindowsForms>False</UseWindowsForms>
+    <UseWindowsForms>true</UseWindowsForms>
     <Platforms>AnyCPU;x64;ARM64</Platforms>
     <Configurations>Debug;Release;GUI Debug</Configurations>
     <!-- Self-contained single file configuration -->
@@ -25,6 +25,7 @@
     <PublishReadyToRun>false</PublishReadyToRun>
     <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>partial</TrimMode>
+    <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>

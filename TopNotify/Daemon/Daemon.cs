@@ -36,7 +36,7 @@ namespace TopNotify.Daemon
         /// </summary>
         async Task MailSlotListener()
         {
-            var listener = new AsyncMailSlotListener("samsidparty_topnotify", Encoding.ASCII.GetBytes("\n")[0]);
+            var listener = new AsyncMailSlotListener("appsjuragan_flynotify", Encoding.ASCII.GetBytes("\n")[0]);
             await foreach (var msgBytes in listener.GetNextMessage())
             {
                 var msg = Encoding.UTF8.GetString(msgBytes);
@@ -56,7 +56,7 @@ namespace TopNotify.Daemon
             try
             {
                 var buffer = new byte[1024];
-                using (var client = MailSlot.CreateClient("samsidparty_topnotify"))
+                using (var client = MailSlot.CreateClient("appsjuragan_flynotify"))
                 {
                     var bytes = Encoding.UTF8.GetBytes(message + "\n");
                     client.Write(bytes, 0, bytes.Length);

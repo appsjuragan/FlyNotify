@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TopNotify.Common
+namespace FlyNotify.Common
 {
     public class FirstLaunch
     {
-        public static void SetupTopNotify()
+        public static void SetupFlyNotify()
         {
-            NotificationTester.Toast("Thank You For Installing TopNotify", "Please double click the icon in the system tray to start customizing");
+            // Removed startup toast to avoid initialization errors
         }
 
         public static Settings GetDefaultSettings()

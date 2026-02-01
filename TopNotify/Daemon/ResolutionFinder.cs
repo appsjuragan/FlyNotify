@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +8,12 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
+using FlyNotify.Common;
 using Windows.Devices.Display.Core;
 using Windows.Media.DialProtocol;
-using static TopNotify.Daemon.NativeInterceptor;
+using static FlyNotify.Daemon.NativeInterceptor;
 
-namespace TopNotify.Daemon
+namespace FlyNotify.Daemon
 {
     public class ResolutionFinder
     {

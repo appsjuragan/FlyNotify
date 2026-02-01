@@ -1,25 +1,25 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Daemon;
-using TopNotify.GUI;
+using FlyNotify.Daemon;
+using FlyNotify.GUI;
 
-namespace TopNotify.Common
+namespace FlyNotify.Common
 {
     public class BugReport
     {
         public static string CreateBugReport()
         {
-            var report = "Please paste the below text into a GitHub issue (https://github.com/SamsidParty/TopNotify/issues)\n\n\n";
+            var report = "Please paste the below text into a GitHub issue (https://github.com/SamsidParty/FlyNotify/issues)\n\n\n";
 
             var nativeInterceptor = InterceptorManager.Instance.Interceptors.Where((t) => t.GetType() == typeof(NativeInterceptor)).First() as NativeInterceptor;
 
             report += $"\n----------- Start Bug Report -----------\n";
-            report += $"TopNotify Version: {MainCommands.GetVersion()}\n";
+            report += $"FlyNotify Version: {MainCommands.GetVersion()}\n";
             report += $"Environment: {Environment.OSVersion}\n";
             report += $"Architecture: {RuntimeInformation.ProcessArchitecture}\n";
             report += $"System Language: {CultureInfo.CurrentUICulture.Name}\n";

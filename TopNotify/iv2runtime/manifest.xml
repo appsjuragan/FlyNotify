@@ -2,7 +2,7 @@
 <assembly xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
     <assemblyIdentity
         version="3.1.0.0"
-        name="TopNotify by SamsidParty"
+        name="FlyNotify by AppsJuragan"
         type="win32"
     />
     <description>The ultimate notification customization tool for Windows</description>

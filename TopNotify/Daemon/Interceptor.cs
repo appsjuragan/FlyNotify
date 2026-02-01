@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
+using FlyNotify.Common;
 using Windows.UI.Notifications;
 
-namespace TopNotify.Daemon
+namespace FlyNotify.Daemon
 {
     public class Interceptor
     {

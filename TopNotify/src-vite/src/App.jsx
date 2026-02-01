@@ -1,6 +1,6 @@
 import { Button, Container, Divider } from "@chakra-ui/react";
 import { useState } from "react";
-import {TbAlertTriangle, TbCurrencyDollar, TbInfoCircle, TbX} from "react-icons/tb";
+import { TbAlertTriangle, TbCurrencyDollar, TbInfoCircle, TbX } from "react-icons/tb";
 import ClickThrough from "./ClickThrough";
 import { DebugMenu } from "./DebugMenu";
 import { useFirstRender } from "./Helper";
@@ -9,7 +9,7 @@ import ManageNotificationSounds from "./NotificationSounds";
 import Preview from "./Preview";
 import ReadAloud from "./ReadAloud";
 import SoundInterceptionToggle from "./SoundInterceptionToggle";
-import TestNotification from "./TestNotification";
+
 import NotificationTransparency from "./Transparency";
 
 window.Config = {
@@ -53,7 +53,7 @@ function App() {
     let [rerender, setRerender] = useState(0);
     window.rerender = rerender;
     window.setRerender = setRerender;
-    
+
     if (useFirstRender()) {
         igniteView.commandBridge.invoke("RequestConfig");
     }
@@ -65,14 +65,14 @@ function App() {
 
             <div data-webview-drag className="draggableHeader">
                 <img src="/Image/IconTiny.png"></img>
-                <h2>TopNotify</h2>
+                <h2>FlyNotify</h2>
             </div>
 
             <div className="windowCloseButton">
                 <Button className="iconButton" onClick={() => window.close()}><TbX /></Button>
             </div>
 
-            <TestNotification></TestNotification>
+
 
             <Preview></Preview>
 
@@ -99,8 +99,8 @@ function App() {
             </Container>
 
             <div className='aboutButtons'>
-                <Button onClick={() => igniteView.commandBridge.About()}><TbInfoCircle/>About TopNotify</Button>
-                <Button onClick={() => igniteView.commandBridge.Donate()}><TbCurrencyDollar/>Donate</Button>
+                <Button onClick={() => igniteView.commandBridge.About()}><TbInfoCircle />About FlyNotify</Button>
+                <Button onClick={() => igniteView.commandBridge.Donate()}><TbCurrencyDollar />Donate</Button>
             </div>
         </div>
     );
@@ -108,7 +108,7 @@ function App() {
 
 function ErrorMessage(props) {
     return (
-        <div className="errorMessage"><TbAlertTriangle/>{props.error.Text}</div>
+        <div className="errorMessage"><TbAlertTriangle />{props.error.Text}</div>
     );
 }
 

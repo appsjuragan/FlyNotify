@@ -34,11 +34,11 @@
 - Efficient performance with minimal CPU/RAM usage
 - Native ARM64 Support
 
-![TopNotify Header](/Docs/Screenshot3.png)
+![FlyNotify Header](/Docs/Screenshot3.png)
 
-![TopNotify Screenshot](/Docs/Screenshot2.png)
+![FlyNotify Screenshot](/Docs/Screenshot2.png)
 
-![TopNotify Screenshot](/Docs/Screenshot1.png)
+![FlyNotify Screenshot](/Docs/Screenshot1.png)
 
 # Supported Windows Versions 🪟
 
@@ -50,6 +50,12 @@ Earlier versions of Windows 10 may work, but are not officially supported.
 # Download 📦
 
 Download the latest portable EXE release from the [releases](https://github.com/appsjuragan/FlyNotify/releases) page. This version is portable and requires no installation.
+
+# Usage 🚀
+
+1. **System Tray**: Once launched, FlyNotify stays out of your way and runs in the system tray (bottom-right of your taskbar).
+2. **Configuration**: **Double-click** the FlyNotify tray icon to open the settings menu. You can also right-click it for more options.
+3. **Testing**: To see FlyNotify in action, visit a notification testing website like [bndesk.com/test-notification/](https://bndesk.com/test-notification/) or [web-push-book.gauntface.com/demos/notification-examples/](https://web-push-book.gauntface.com/demos/notification-examples/). Trigger a notification, and watch FlyNotify move it to your preferred location or monitor!
 
 # Star History ⭐
 

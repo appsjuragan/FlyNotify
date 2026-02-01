@@ -1,4 +1,4 @@
-﻿using IgniteView.Core;
+using IgniteView.Core;
 using IgniteView.Desktop;
 using Newtonsoft.Json;
 using System;
@@ -8,12 +8,12 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
-using TopNotify.Daemon;
+using FlyNotify.Common;
+using FlyNotify.Daemon;
 using Windows.Security.Credentials;
-using static TopNotify.Daemon.ResolutionFinder;
+using static FlyNotify.Daemon.ResolutionFinder;
 
-namespace TopNotify.GUI
+namespace FlyNotify.GUI
 {
     public class DragModeCommands
     {

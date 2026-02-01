@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Daemon;
+using FlyNotify.Daemon;
 
-namespace SamsidParty_TopNotify.Daemon
+namespace SamsidParty_FlyNotify.Daemon
 {
     public class ExtendedStyleManager
     {

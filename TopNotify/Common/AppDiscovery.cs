@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TopNotify.Common
+namespace FlyNotify.Common
 {
     public enum AppDiscoveryMethod
     {
@@ -17,7 +17,7 @@ namespace TopNotify.Common
     public class AppDiscovery
     {
         /// <summary>
-        /// Determines How TopNotify Will Check If The App Is Installed
+        /// Determines How FlyNotify Will Check If The App Is Installed
         /// </summary>
         public AppDiscoveryMethod Method = AppDiscoveryMethod.MatchAlways;
 

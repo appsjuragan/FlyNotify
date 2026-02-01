@@ -1,4 +1,4 @@
-﻿using IgniteView.Core;
+using IgniteView.Core;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -13,14 +13,14 @@ using System.Security.AccessControl;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
+using FlyNotify.Common;
 using Windows.UI.Notifications;
 
-namespace TopNotify.Daemon
+namespace FlyNotify.Daemon
 {
     public class SoundInterceptor : Interceptor
     {
-        // This File Is Used To Replace The Default Notification Sounds, So That TopNotify Can Play A Different Sound
+        // This File Is Used To Replace The Default Notification Sounds, So That FlyNotify Can Play A Different Sound
         const string FAKE_SOUND = "internal/silent";
 
         SoundPlayer Player;
@@ -30,7 +30,7 @@ namespace TopNotify.Daemon
 
         /// <summary>
         /// Sets The Notification Sound In The Registry To The Fake Sound File
-        /// TopNotify Doesn't Have Registry Access Because Of MSIX, So Call CMD To Do It For Us
+        /// FlyNotify Doesn't Have Registry Access Because Of MSIX, So Call CMD To Do It For Us
         /// </summary>
         [Command("InstallSoundInRegistry")]
         public static void InstallSoundInRegistry()
@@ -68,7 +68,7 @@ namespace TopNotify.Daemon
             try
             {
                 var command = $"reg query HKCU\\AppEvents\\Schemes\\Apps\\.Default\\Notification.Default\\.Current /t REG_SZ /ve";
-                return Util.SimpleCMD(command)?.Contains("TopNotify") ?? false;
+                return Util.SimpleCMD(command)?.Contains("FlyNotify") ?? false;
             }
             catch (Exception ex) { }
 

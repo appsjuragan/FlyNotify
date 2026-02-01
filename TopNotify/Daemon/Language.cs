@@ -1,4 +1,4 @@
-﻿using IgniteView.Core;
+using IgniteView.Core;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -6,9 +6,9 @@ using System.IO.Enumeration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
+using FlyNotify.Common;
 
-namespace TopNotify.Daemon
+namespace FlyNotify.Daemon
 {
     public class Language
     {

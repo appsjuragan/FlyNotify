@@ -8,6 +8,6 @@ export default defineConfig({
         react(),
     ],
     build: {
-        outDir: "..\\..\\TopNotify\\dist"
+        outDir: "..\\..\\FlyNotify\\dist"
     },
 });

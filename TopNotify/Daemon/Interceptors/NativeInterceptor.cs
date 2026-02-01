@@ -7,14 +7,14 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 using System.Threading.Tasks;
-using TopNotify.Common;
-using SamsidParty_TopNotify.Daemon;
+using FlyNotify.Common;
+using SamsidParty_FlyNotify.Daemon;
 using Windows.UI.Notifications.Management;
 using Windows.ApplicationModel.Background;
 using Windows.UI.Notifications;
-using static TopNotify.Daemon.ResolutionFinder;
+using static FlyNotify.Daemon.ResolutionFinder;
 
-namespace TopNotify.Daemon
+namespace FlyNotify.Daemon
 {
 
     public class NativeInterceptor : Interceptor
@@ -54,8 +54,8 @@ namespace TopNotify.Daemon
         const short SWP_NOZORDER = 0X4;
         const int SWP_SHOWWINDOW = 0x0040;
 
-        [DllImport("TopNotify.Native")]
-        private static extern bool TopNotifyEnumWindows(EnumWindowsProc enumProc, IntPtr lParam);
+        [DllImport("FlyNotify.Native")]
+        private static extern bool FlyNotifyEnumWindows(EnumWindowsProc enumProc, IntPtr lParam);
 
         public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
 
@@ -90,7 +90,7 @@ namespace TopNotify.Daemon
             IntPtr found = IntPtr.Zero;
             List<IntPtr> windows = new List<IntPtr>();
 
-            TopNotifyEnumWindows(delegate (IntPtr hwnd, IntPtr param)
+            FlyNotifyEnumWindows(delegate (IntPtr hwnd, IntPtr param)
             {
                 var classGet = new StringBuilder(1024);
                 GetClassName(hwnd, classGet, classGet.Capacity);

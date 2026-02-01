@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Win32;
 using Newtonsoft.Json;
-using TopNotify.Daemon;
+using FlyNotify.Daemon;
 using Windows.ApplicationModel;
 using Windows.Foundation.Metadata;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace TopNotify.Common
+namespace FlyNotify.Common
 {
     [Serializable]
     public class Settings
@@ -93,7 +93,7 @@ namespace TopNotify.Common
 
 
         /// <summary>
-        /// Returns The Full Path Of fileName Located In TopNotify's AppData Directory
+        /// Returns The Full Path Of fileName Located In FlyNotify's AppData Directory
         /// Calls getDefaultValue and uses the result if the file doesn't exist
         /// </summary>
         public static string GetFilePath(string fileName, Func<byte[]> getDefaultValue)
@@ -107,7 +107,7 @@ namespace TopNotify.Common
 
                 if (fileName == "Settings.json")
                 {
-                    FirstLaunch.SetupTopNotify();
+                    FirstLaunch.SetupFlyNotify();
                 }
 
             }
@@ -143,7 +143,7 @@ namespace TopNotify.Common
         }
 
         /// <summary>
-        /// Updates The Temporary Fields Used By Other Parts Of TopNotify (eg. __ScreenWidth)
+        /// Updates The Temporary Fields Used By Other Parts Of FlyNotify (eg. __ScreenWidth)
         /// </summary>
         public void UpdateDynamicFields()
         {

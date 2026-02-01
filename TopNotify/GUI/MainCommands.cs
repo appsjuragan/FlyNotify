@@ -1,7 +1,7 @@
-﻿using IgniteView.Core;
+using IgniteView.Core;
 using IgniteView.Desktop;
 using Newtonsoft.Json;
-using SamsidParty_TopNotify.Daemon;
+using SamsidParty_FlyNotify.Daemon;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,23 +10,17 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
-using TopNotify.Daemon;
+using FlyNotify.Common;
+using FlyNotify.Daemon;
 // using Windows.ApplicationModel.Store;
 
-namespace TopNotify.GUI
+namespace FlyNotify.GUI
 {
     public class MainCommands
     {
         static bool isSaving = false;
 
-        //Called By JavaScript
-        //Spawns A Test Notification
-        [Command("SpawnTestNotification")]
-        public static void SpawnTestNotification()
-        {
-            NotificationTester.SpawnTestNotification();
-        }
+
 
         //Called By JavaScript
         //Opens The About Page
@@ -44,7 +38,7 @@ namespace TopNotify.GUI
         [Command("Donate")] 
         public static void Donate()
         {
-             NotificationTester.MessageBox("Donation", "Store donations are not available in the portable version. Please visit our GitHub or website.");
+             NotificationHelper.MessageBox("Donation", "Store donations are not available in the portable version. Please visit our GitHub or website.");
         }
 
         [Command("GetVersion")]

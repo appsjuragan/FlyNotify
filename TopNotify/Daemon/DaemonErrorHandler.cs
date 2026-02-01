@@ -1,32 +1,32 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
+using FlyNotify.Common;
 
-namespace TopNotify.Daemon
+namespace FlyNotify.Daemon
 {
     public class DaemonErrorHandler
     {
         public static List<DaemonError> Errors = new List<DaemonError>();
 
         /// <summary>
-        /// Displays An Error To The User Without Closing TopNotify
+        /// Displays An Error To The User Without Closing FlyNotify
         /// </summary>
         public static void ThrowNonCritical(DaemonError error)
         {
             Errors.Add(error);
-            NotificationTester.Toast("Something Went Wrong", error.Text);
+            NotificationHelper.Toast("Something Went Wrong", error.Text);
         }
 
         /// <summary>
-        /// Displays An Error To The User And Closes TopNotify
+        /// Displays An Error To The User And Closes FlyNotify
         /// </summary>
         public static void ThrowCritical(DaemonError error)
         {
             Errors.Add(error);
-            NotificationTester.Toast("Something Went Wrong", error.Text);
+            NotificationHelper.Toast("Something Went Wrong", error.Text);
             Environment.Exit(1);
         }
     }

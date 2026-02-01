@@ -1,4 +1,4 @@
-﻿using IgniteView.Core;
+using IgniteView.Core;
 using IgniteView.FileDialogs;
 using Newtonsoft.Json;
 using System;
@@ -8,10 +8,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
-using TopNotify.Daemon;
+using FlyNotify.Common;
+using FlyNotify.Daemon;
 
-namespace TopNotify.GUI
+namespace FlyNotify.GUI
 {
     public class SoundFinder
     {
@@ -90,7 +90,7 @@ namespace TopNotify.GUI
 
                 var importedFiles = Directory.GetFiles(ImportedSoundFolder, "*.wav", SearchOption.AllDirectories);
 
-                // Music folder doesn't always exist https://github.com/SamsidParty/TopNotify/issues/40#issuecomment-2692353622
+                // Music folder doesn't always exist https://github.com/SamsidParty/FlyNotify/issues/40#issuecomment-2692353622
                 if (Directory.Exists(musicFolder))
                 {
                     return Directory.GetFiles(musicFolder, "*.wav", SearchOption.AllDirectories).Concat(importedFiles).ToArray();

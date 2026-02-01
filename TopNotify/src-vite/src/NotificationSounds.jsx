@@ -85,7 +85,7 @@ export default function ManageNotificationSounds() {
                             })
                         }
                         <Divider/>
-                        <p>When an app sends a notification, TopNotify will capture it and it will show up here for you to modify the sounds.</p>
+                        <p>When an app sends a notification, FlyNotify will capture it and it will show up here for you to modify the sounds.</p>
                     </DrawerBody>
 
                     <DrawerFooter>

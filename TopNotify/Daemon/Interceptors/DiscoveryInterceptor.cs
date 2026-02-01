@@ -1,14 +1,14 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TopNotify.Common;
-using TopNotify.Daemon;
+using FlyNotify.Common;
+using FlyNotify.Daemon;
 using Windows.UI.Notifications;
 
-namespace TopNotify.Daemon
+namespace FlyNotify.Daemon
 {
     public class DiscoveryInterceptor : Interceptor
     {
@@ -22,7 +22,7 @@ namespace TopNotify.Daemon
             if (!alreadyHasAppReference)
             {
                 // Add The AppInfo To The Settings File
-                var settingsFile = TopNotify.Common.Settings.Get();
+                var settingsFile = FlyNotify.Common.Settings.Get();
 
                 var appReference = new AppReference()
                 {
@@ -35,7 +35,7 @@ namespace TopNotify.Daemon
 
                 settingsFile.AppReferences.Add(appReference);
 
-                TopNotify.Common.Settings.Overwrite(JsonConvert.SerializeObject(settingsFile)); // Write The Settings File
+                FlyNotify.Common.Settings.Overwrite(JsonConvert.SerializeObject(settingsFile)); // Write The Settings File
                 InterceptorManager.Instance.OnSettingsChanged(); // Tells The InterceptorManager To Reload The Settings File
             }
 

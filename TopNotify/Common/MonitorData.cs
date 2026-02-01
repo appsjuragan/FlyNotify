@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TopNotify.Common
+namespace FlyNotify.Common
 {
     [Serializable]
     public class MonitorData
     {
         /// <summary>
-        /// Used By TopNotify To Identify The Monitor
+        /// Used By FlyNotify To Identify The Monitor
         /// </summary>
         public string ID;
 

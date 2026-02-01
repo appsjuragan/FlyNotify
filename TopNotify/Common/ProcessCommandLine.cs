@@ -1,4 +1,4 @@
-﻿//This File Is From https://github.com/sonicmouse/ProcCmdLine/blob/master/ManagedProcessCommandLine/ProcessCommandLine.cs
+//This File Is From https://github.com/sonicmouse/ProcCmdLine/blob/master/ManagedProcessCommandLine/ProcessCommandLine.cs
 //Huge Thanks To sonicmouse For Providing This Useful File
 
 using System;
@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace TopNotify.Common
+namespace FlyNotify.Common
 {
     public static class ProcessCommandLine
     {

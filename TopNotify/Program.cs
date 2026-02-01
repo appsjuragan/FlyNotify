@@ -1,12 +1,12 @@
-﻿#define TRACE // Enable Trace.WriteLine
+#define TRACE // Enable Trace.WriteLine
 
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using Microsoft.Toolkit.Uwp.Notifications;
-using TopNotify.Daemon;
-using TopNotify.Common;
-using TopNotify.GUI;
+using FlyNotify.Daemon;
+using FlyNotify.Common;
+using FlyNotify.GUI;
 using IgniteView.Core;
 using IgniteView.Desktop;
 using System.Reflection;
@@ -15,17 +15,17 @@ using System.Runtime.InteropServices;
 using Serilog;
 using Serilog.Core;
 
-namespace TopNotify.Common
+namespace FlyNotify.Common
 {
     public class Program
     {
 
         public static Daemon.Daemon Background;
         public static AppManager GUI;
-        public static IEnumerable<Process> ValidTopNotifyInstances;
+        public static IEnumerable<Process> ValidFlyNotifyInstances;
         public static Logger Logger;
 
-        public static bool IsDaemonRunning => ValidTopNotifyInstances.Where((p) => {
+        public static bool IsDaemonRunning => ValidFlyNotifyInstances.Where((p) => {
             try
             {
                 string commandLine;
@@ -36,7 +36,7 @@ namespace TopNotify.Common
             return false;
         }).Any();
 
-        public static bool IsGUIRunning => ValidTopNotifyInstances.Where((p) => {
+        public static bool IsGUIRunning => ValidFlyNotifyInstances.Where((p) => {
             try
             {
                 string commandLine;
@@ -64,7 +64,7 @@ namespace TopNotify.Common
 
             AppDomain.CurrentDomain.UnhandledException += (object sender, UnhandledExceptionEventArgs e) =>
             {
-                NotificationTester.MessageBox("Something went wrong with FlyNotify", "Unfortunately, FlyNotify has crashed. Details: " + e.ExceptionObject.ToString());
+                NotificationHelper.MessageBox("Something went wrong with FlyNotify", "Unfortunately, FlyNotify has crashed. Details: " + e.ExceptionObject.ToString());
             };
 
             //By Default, The App Will Be Launched In Daemon Mode
@@ -74,7 +74,7 @@ namespace TopNotify.Common
             //These Mode Switches Ensure All Functions Of The App Use The Same Executable
 
             //Find Other Instances Of FlyNotify
-            ValidTopNotifyInstances = Process.GetProcessesByName("FlyNotify").Where((p) => {
+            ValidFlyNotifyInstances = Process.GetProcessesByName("FlyNotify").Where((p) => {
                 try
                 {
                     return !p.HasExited && p.Id != Process.GetCurrentProcess().Id;
